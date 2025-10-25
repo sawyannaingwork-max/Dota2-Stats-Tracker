@@ -574,6 +574,11 @@ p.L
     color: var(--boxColor);
 }
 
+.menu-content ul li a.active 
+{
+    color: var(--boxColor);
+}
+
 .heroes-icon-container 
 {
     width: 100px;
