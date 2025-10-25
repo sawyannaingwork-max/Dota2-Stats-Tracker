@@ -1,4 +1,4 @@
-{
+export default {
   "1": {
     "id": 1,
     "name": "npc_dota_hero_antimage",

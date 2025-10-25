@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../css/style.css">
+    <title>Team Info</title>
+</head>
+<body>
+    <header>
+        <div class="menu-bar">
+            <img src="./../assets/menu.svg" alt="Menu">
+        </div>
+        <div class="banner">
+            <h1>Dota2 Stats Tracker</h1>
+        </div>
+        <div class="menu-content">
+            <ul>
+                <li>
+                    <a href="./../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./../html/public.html">Public Matches</a>
+                </li>
+                <li>
+                    <a href="./../html/team.html">Professional Team</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="team-info">
+            <div class="animation">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="circle-3"></div>
+                <div class="circle-4"></div>
+                <div class="circle-5"></div>
+            </div>
+        </div>
+        <div class="current-player">
+            <div class="animation">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="circle-3"></div>
+                <div class="circle-4"></div>
+                <div class="circle-5"></div>
+            </div>
+            <h2>Current Player</h2>
+            <table class="players">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Total</th>
+                        <th>Win</th>
+                        <th>Win Rate</th>
+                    </tr>
+                </thead>
+
+                <tbody class="current-table">
+
+                </tbody>
+            </table>
+        </div>  
+        <div class="previous-player">
+            <div class="animation">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="circle-3"></div>
+                <div class="circle-4"></div>
+                <div class="circle-5"></div>
+            </div>
+            <h2>Previous Player</h2>
+            <table class="players">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Total</th>
+                        <th>Win</th>
+                        <th>Win Rate</th>
+                    </tr>
+                </thead>
+
+                <tbody class="previous-table">
+
+                </tbody>
+            </table>
+
+        </div>
+        <div class="team-info-buttonList">
+            <button class="team-hero-btn selected">Heroes</button>
+            <button class="team-matches-btn">Matches</button>
+        </div>
+
+        <div class="team-heroes-list">
+            <div class="animation">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="circle-3"></div>
+                <div class="circle-4"></div>
+                <div class="circle-5"></div>
+            </div>
+            <table class="players heroes-table">
+                <thead>
+                    <tr>
+                        <th>Hero</th>
+                        <th>Total</th>
+                        <th>Win</th>
+                        <th>Win Rate</th>
+                    </tr>
+                </thead>
+                <tbody class="team-hero-table">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="team-matches-list">
+             <div class="animation">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="circle-3"></div>
+                <div class="circle-4"></div>
+                <div class="circle-5"></div>
+            </div>
+        </div>
+    </main>
+    <script src="./../js/teamInfo.js" type="module"></script>
+</body>
+</html>

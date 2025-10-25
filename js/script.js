@@ -1,9 +1,12 @@
+import heroes from "./../helpers/heroes.js";
+import { showInViewPort, scrollAnimation, toggleMenu } from "./common.js";
 // Selecting DOM
 const agilityBtn = document.querySelector(".agility");
 const intelBtn = document.querySelector(".intel");
 const stregthBtn = document.querySelector(".strength");
 const universalBtn = document.querySelector(".universal");
 const input = document.querySelector("input");
+const menuBar = document.querySelector(".menu-bar");
 
 class Hero 
 {
@@ -57,46 +60,49 @@ class Hero
 
         div.prepend(image);
 
+        // Adding Event on div
+        div.addEventListener("click", () => 
+        {
+            // Go to another page
+            window.location.href = `./html/hero.html?id=${this.id}`;
+        })
+
         document.querySelector(".hero-container").append(div);
+
+        showInViewPort(div);
     }
     
 }
 
 // Adding Event
-document.addEventListener("DOMContentLoaded", async () => 
+document.addEventListener("DOMContentLoaded", () => 
 {
-    // Fetching heroes data
-    try 
+    // For Each hero add them to dom
+    for (const index in heroes)
     {
-        const response = await fetch("./../helpers/heroes.json");
+        const data = heroes[index];
 
-        if (response.ok)
-        {
-            const heroes = await response.json();
+        // Create a hero object
+        const hero = new Hero(data.id, data.localized_name, data.img, data.roles, data.primary_attr);
 
-            // For Each hero add them to dom
-            for (const index in heroes)
-            {
-                const data = heroes[index];
-
-                // Create a hero object
-                const hero = new Hero(data.id, data.localized_name, data.img, data.roles, data.primary_attr);
-
-                hero.add();
-            }
-        }
-
-        else 
-        {
-            // Do Something
-        }
-    }
-
-    catch(error)
-    {
-        // Do Something
+        hero.add();
     }
 })  
+
+document.addEventListener("scroll", function()
+{
+    // Selecting herocard
+    const heroCards = document.querySelectorAll(".heroCard");
+
+    scrollAnimation(heroCards);
+
+    
+})
+
+menuBar.addEventListener("click", function()
+{
+    toggleMenu();
+})
 
 agilityBtn.addEventListener("click", function()
 {
@@ -246,6 +252,8 @@ function filterHero(type)
             else 
             {
                 heroCard.style.display = "block";
+
+                showInViewPort(heroCard);
             }
         }
     }
@@ -302,6 +310,8 @@ function filterName()
             if (heroCard.querySelector("h3").textContent.toLowerCase().includes(filterValue))
             {
                 heroCard.style.display = "block";
+
+                showInViewPort(heroCard);
             }
 
             else 
@@ -311,3 +321,4 @@ function filterName()
         }
     }
 }
+
