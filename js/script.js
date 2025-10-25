@@ -199,7 +199,8 @@ input.addEventListener("keyup", function()
     const activeFilter = document.querySelector(".active");
 
     if (activeFilter)
-    {
+    {   
+        console.log(activeFilter);
         // Getting its textcontent
         const filterType = activeFilter.textContent;
 

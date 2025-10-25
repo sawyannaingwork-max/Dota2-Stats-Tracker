@@ -574,7 +574,8 @@ p.L
     color: var(--boxColor);
 }
 
-.menu-content ul li a.active 
+
+.menu-content ul li a.activeLink
 {
     color: var(--boxColor);
 }
@@ -1021,7 +1022,7 @@ p.L
 {
     display: grid;
     justify-content: space-between;
-    grid-template-columns: 150px 150px 150px;
+    grid-template-columns: 150px 150px;
     row-gap: 20px;
     position: relative;
 }
@@ -1349,6 +1350,13 @@ div.circle-5
     {
         grid-template-columns: 150px;
         justify-content: center;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .team-container 
+    {
+        grid-template-columns: 150px 150px 150px;
     }
 }
 
